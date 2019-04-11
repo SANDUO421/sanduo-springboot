@@ -1,0 +1,41 @@
+
+# 禁用默认错误处理页面
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 9001
+# 配置druid数据库连接池
+spring:
+  application:
+    name: job-task
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      label: master
+      name: jobtask
+      profile: dev
+      uri: http://localhost:8008/
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: jobtask
+        prefer-ip-address: true
+        register: true
+      enabled: true
+      host: ${consul-host:127.0.0.1}
+      port: ${consul-port:8500}
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+
+
