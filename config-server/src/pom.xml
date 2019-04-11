@@ -11,7 +11,7 @@
     <groupId>com.tourism</groupId>
     <artifactId>bigdata-tourism</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bigdata-tourism</name>
+    <name>config-server</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

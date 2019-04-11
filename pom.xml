@@ -21,9 +21,9 @@
         <module>springboot-security</module>
         <module>springboot-quartz</module>
         <module>api-common</module>
-        <module>bigdata-tourism</module>
         <module>task-job</module>
         <module>springboot-lambda</module>
+        <module>springboot-redis</module>
     </modules>
 
     <properties>
