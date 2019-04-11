@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -75,7 +77,22 @@ public class TestStreamFilter {
 
         /**
          * 流转换为其它数据结构
+         * 一个 Stream 只可以使用一次，上面的代码为了简洁而重复使用了数次。
          */
+        Stream<String> stream2 = Stream.of("a", "b", "c");
+        // 1. Array
+        //String[] strArray1 = stream2.toArray(String[]::new);
+        // 2. Collection
+        //List<String> list3 = stream2.collect(Collectors.toList());
+        //List<String> list4 = stream2.collect(Collectors.toCollection(ArrayList::new));
+        //Set set1 = stream2.collect(Collectors.toSet());
+        //Stack stack1 = stream2.collect(Collectors.toCollection(Stack::new));
+        // 3. String
+        String str = stream2.collect(Collectors.joining()).toString();
+        System.out.println(str);
+
+
+
 
 
     }
