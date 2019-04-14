@@ -24,6 +24,7 @@
         <module>task-job</module>
         <module>springboot-lambda</module>
         <module>springboot-redis</module>
+        <module>java-thinking</module>
     </modules>
 
     <properties>
@@ -92,6 +93,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <optional>true</optional>
             </dependency>
         </dependencies>
 
