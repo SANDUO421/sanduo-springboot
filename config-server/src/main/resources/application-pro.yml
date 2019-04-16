@@ -1,0 +1,43 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'
+  server:
+    servlet:
+      context-path: /actuator
+server:
+  port: 10002
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          password: yingzi308
+          skipSslValidation: true
+          uri: https://github.com/SANDUO421/springcloud-config-repo.git
+          username: sanduo421
+          search-paths: pro
+      profile: pro
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: config-server
+        prefer-ip-address: true
+        register: true
+      enabled: true
+      host: ${consul-host:192.168.10.9}
+      port: ${consul-port:8500}
+  rabbitmq:
+    host: 192.168.10.9
+    password: tourism@permit
+    port: 5672
+    username: tourism-permit
