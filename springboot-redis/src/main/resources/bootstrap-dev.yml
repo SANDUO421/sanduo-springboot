@@ -12,20 +12,19 @@ management:
     servlet:
       context-path: /actuator
 server:
-  port: 10000
+  port: 9001
 spring:
   application:
-    name: config-server
+    name: springboot-redis
   cloud:
     config:
-      server:
-        git:
-          clone-on-start: true
-          password: yingzi308
-          search-paths: dev
-          skipSslValidation: true
-          uri: https://github.com/SANDUO421/springcloud-config-repo.git
-          username: sanduo421
+      discovery:
+        enabled: true
+        service-id: config-server
+      label: master
+      name: ${spring.application.name}
+      profile: dev
+      uri: localhost:10000/
     consul:
       discovery:
         health-check-interval: 10s
@@ -36,8 +35,3 @@ spring:
       enabled: true
       host: ${consul-host:localhost}
       port: ${consul-port:8500}
-  rabbitmq:
-    host: 192.168.10.9
-    password: tourism@permit
-    port: 5672
-    username: tourism-permit

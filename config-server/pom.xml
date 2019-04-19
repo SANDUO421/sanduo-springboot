@@ -44,10 +44,10 @@
             <artifactId>spring-cloud-config-monitor</artifactId>
         </dependency>
         <!--处理敏感信息-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency>-->
         <!--注意不添加该依赖，会找不到@SpringCloudApplication，同时bootstrap.yml 不生效-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

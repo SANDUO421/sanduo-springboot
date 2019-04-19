@@ -1,0 +1,32 @@
+#server:
+#  port: 9001
+#spring:
+#  application:
+#    name: springboot-redis
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    default-property-inclusion: non_null
+#    time-zone: GMT+8
+#  redis:
+#    database: 1
+#    host: 192.168.10.9
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        max-wait: -1
+#        min-idle: 0
+#    password: lydsj@2019
+#    port: 63790
+#    timeout: 500000000ms
+#management:
+#  endpoint:
+#    health:
+#      enabled: true
+#    metrics:
+#      enabled: true
+#  server:
+#    servlet:
+#      context-path: /actuator
+#my:
+#  config: sanduo
