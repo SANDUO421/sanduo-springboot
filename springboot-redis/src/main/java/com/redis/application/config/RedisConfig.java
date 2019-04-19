@@ -3,6 +3,7 @@ package com.redis.application.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -30,23 +31,20 @@ import org.springframework.stereotype.Component;
 @Component
 public class RedisConfig extends CachingConfigurerSupport {
 
-    //@Value("${spring.redis.host}")
-    //private String host;
-    //@Value("${spring.redis.port}")
-    //private int port;
-    //@Value("${spring.redis.password}")
-    //private  String password;
+    @Value("${spring.redis.host}")
+    private String host;
+    @Value("${spring.redis.port}")
+    private int port;
+    @Value("${spring.redis.password}")
+    private  String password;
 
     @Bean
     public RedisConnectionFactory connectionFactory(){
         //如果什么参数都不设置，默认连接本地6379端口
         LettuceConnectionFactory factory = new LettuceConnectionFactory();
-        //factory.setHostName(host);
-        //factory.setPort(port);
-        //factory.setPassword(password);
-        factory.setPort(63790);
-        factory.setHostName("192.168.10.9");
-        factory.setPassword("lydsj@2019");
+        factory.setHostName(host);
+        factory.setPort(port);
+        factory.setPassword(password);
         return factory;
     }
 
