@@ -16,13 +16,15 @@ import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author 三多
  * @Time 2019/4/11
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes={RedisApplication.class})
+@SpringBootTest(classes = {RedisApplication.class})
 public class RedisServiceUtilsTest {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -31,7 +33,7 @@ public class RedisServiceUtilsTest {
     private RedisTemplate redisTemplate;
 
     @Resource
-    private ValueOperations<String,Object> valueOperations;
+    private ValueOperations<String, Object> valueOperations;
 
     @Autowired
     private HashOperations<String, String, Object> hashOperations;
@@ -49,49 +51,78 @@ public class RedisServiceUtilsTest {
     @Resource
     private RedisServiceUtils redisServiceUtils;
 
+    /**
+     * 设置添加
+     */
     @Test
-    public void  setValueOption(){
+    public void setValueOption() {
         UserEntity user = new UserEntity();
         user.setAddress("上海");
         user.setName("sanduo");
         user.setAge(23);
-        valueOperations.set(user.getName(),user);
-        System.out.println(valueOperations.get(user.getName()));
+        valueOperations.set(user.getName(), user);
+        System.out.println("用户名：" + valueOperations.get(user.getName()));
     }
 
+    /**
+     * 判断存在获取值
+     */
     @Test
     public void existsKey() {
         //UserEntity user = new UserEntity();
         //user.setAddress("上海");
         //user.setName("测试dfas");
         //user.setAge(123);
-        //ValueOperations opsStr = redisTemplate.opsForValue();
-        //redisServiceUtils.expireKey("name",20, TimeUnit.SECONDS);
-        //String key = RedisKeyUtil.getKey(UserEntity.Table, "name", user.getName());
-        //UserEntity userEntity = (UserEntity) opsStr.get(key);
-        //System.out.println(userEntity.toString());
+        // String key = RedisKeyUtil.getKey(UserEntity.Table, "name", user.getName());
+        ValueOperations opsStr = redisTemplate.opsForValue();
+        boolean result = redisServiceUtils.expireKey("sanduo", 20, TimeUnit.SECONDS);
+        if (result) {
+            UserEntity userEntity = (UserEntity) opsStr.get("sanduo");
+            System.out.println("获取key=sanduo的值:"+userEntity.toString());
+        }
+    }
+
+    /**
+     * 测试SetOperations
+     */
+    @Test
+    public void setOperations() {
+
+        UserEntity user = new UserEntity();
+        user.setAddress("西安");
+        user.setName("测试西安");
+        user.setAge(85);
+
+        UserEntity user1 = new UserEntity();
+        user1.setAddress("兰州");
+        user1.setName("测试兰州");
+        user1.setAge(36);
+
+        setOperations.add("hash:set",user,user1);
+        Set<Object> members = setOperations.members("hash:set");
+        System.out.println(members);
 
     }
 
     @Test
-    public void renameKey() {
+    public void hashOperations() {
+        UserEntity user = new UserEntity();
+        user.setAddress("北京");
+        user.setName("测试北京");
+        user.setAge(15);
+        hashOperations.put("hash:user",user.hashCode()+"",user);
+        System.out.println(hashOperations.get("hash:user",user.hashCode()+""));
     }
 
     @Test
-    public void renameKeyNotExist() {
+    public void listOperations() {
+        UserEntity user = new UserEntity();
+        user.setAddress("北京");
+        user.setName("tom");
+        user.setAge(20);
+        System.out.println(listOperations.leftPop("list:user"));
     }
 
-    @Test
-    public void deleteKey() {
-    }
-
-    @Test
-    public void deleteKey1() {
-    }
-
-    @Test
-    public void deleteKey2() {
-    }
 
     @Test
     public void expireKey() {

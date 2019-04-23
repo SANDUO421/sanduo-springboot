@@ -86,13 +86,15 @@ public class RedisServiceUtils {
 
     /**
      * 设置key的生命周期
-     *
+     * 如果返回值为boolean：会出现NPE
      * @param key
      * @param time
      * @param timeUnit
+     * @return
      */
-    public void expireKey(String key, long time, TimeUnit timeUnit) {
-        redisTemplate.expire(key, time, timeUnit);
+    public Boolean expireKey(String key, long time, TimeUnit timeUnit) {
+        Boolean result = redisTemplate.expire(key, time, timeUnit);
+        return result;
     }
 
     /**
