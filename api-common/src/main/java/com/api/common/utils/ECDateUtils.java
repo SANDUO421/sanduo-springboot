@@ -856,16 +856,16 @@ public class ECDateUtils {
 	    	 date = calendar.getTime();
 	    	 return date;
 	    }
-	    public static void main(String[] args) {
-	    	Calendar now = Calendar.getInstance();
-	    	now.setTime(new Date());
-	    	System.out.println(now.getTime());
-	    	
-	    	Calendar nowBefore = Calendar.getInstance();
-	    	nowBefore.setTime(new Date());
-	    	nowBefore.set(Calendar.MONTH, nowBefore.get(Calendar.MONTH) - 12);
-			System.out.println(nowBefore.getTime());
-		}
+	    //public static void main(String[] args) {
+	    //	Calendar now = Calendar.getInstance();
+	    //	now.setTime(new Date());
+	    //	System.out.println(now.getTime());
+	    //
+	    //	Calendar nowBefore = Calendar.getInstance();
+	    //	nowBefore.setTime(new Date());
+	    //	nowBefore.set(Calendar.MONTH, nowBefore.get(Calendar.MONTH) - 12);
+		//	System.out.println(nowBefore.getTime());
+		//}
 	    /**
 		 * 得到某天的最后时间
 		 * @return

@@ -1,0 +1,52 @@
+spring:
+  redis:
+#    password: 123456
+#    host: 192.168.1.216
+#    port: 6379
+    password: lydsj@2019
+    host: 192.168.10.9
+    port: 63790
+    timeout: 500000000ms
+  cloud:
+    consul:
+      enabled: true
+      host: ${consul-host:192.168.10.9}
+      port: ${consul-port:8500}
+      discovery:
+        register: true
+        instance-id: gateway #唯一的服务实例ID
+        prefer-ip-address: true #在注册时使用ip地址。禁用主机名。
+        health-check-path: ${management.server.servlet.context-path}/health #调用健康检查的备用服务器路径
+        health-check-interval: 10s #consul的服务健康心跳检测时间为10s
+    config:
+      discovery:
+        service-id: config
+        enabled: true
+      profile: dev
+      uri: http://192.168.10.9:8008/ #配置中心的服务器。
+      label: master
+      name: gateway
+  application:
+    name: gateway
+  zipkin:
+    base-url: 192.168.10.9:8080 #链路追踪的服务器。
+  sleuth:
+    sampler:
+      probability: 1
+server:
+  port: 9000
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://192.168.10.9:9000/oauthCenter/userdev
+      prefer-token-info: false
+

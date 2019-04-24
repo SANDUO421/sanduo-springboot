@@ -32,7 +32,7 @@ public class HashUtils {
     return code.toString();
   }
   
-  public static void main(String[] args) {
-    System.out.println(encryPassword("session_secret"));
-  }
+  //public static void main(String[] args) {
+  //  System.out.println(encryPassword("session_secret"));
+  //}
 }

@@ -1,0 +1,40 @@
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 1
+  application:
+    name: auth2-center
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      label: master
+      name: auth2center
+      profile: dev
+      uri: http://192.168.10.9:8008/
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: auth2-center
+        prefer-ip-address: true
+        register: true
+      enabled: true
+      host: ${consul-host:192.168.10.9}
+      port: ${consul-port:8500}
+server:
+  port: 8015
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+  endpoints:
+    web:
+      exposure:
+        include: "*"
