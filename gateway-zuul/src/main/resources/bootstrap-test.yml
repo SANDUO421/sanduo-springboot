@@ -1,0 +1,31 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+server:
+  port: 9000
+spring:
+  application:
+    name: gateway-zuul
+  redis:
+    password: lydsj@2019
+    host: 192.168.10.9
+    port: 63790
+    timeout: 500000000ms
+    database: 1
+zuul:
+  routes:
+    # 用户服务的路由配置
+    redis:
+      path: /redis/**
+      serviceId:  springboot-redis
+  ignored-services: "*"
+  sensitive-headers: "*"
+ribbon:
+  ReadTimeout: 1200000  #处理超时时间 默认5秒
+  ConnectTimeout: 1200000 #连接超时时间 默认2秒
