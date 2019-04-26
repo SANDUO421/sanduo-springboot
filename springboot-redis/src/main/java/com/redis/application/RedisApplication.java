@@ -4,6 +4,7 @@ import com.github.tobato.fastdfs.FdfsClientConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Import;
  * @author 三多
  * @Time 2019/4/11
  */
+@RefreshScope
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringCloudApplication
