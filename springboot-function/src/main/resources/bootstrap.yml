@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springboot-function
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  profiles:
+    active: dev

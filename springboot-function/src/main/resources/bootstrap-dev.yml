@@ -9,10 +9,10 @@ management:
     servlet:
       context-path: /actuator
 server:
-  port: 9001
+  port: 9002
 spring:
   application:
-    name: gateway-zuul
+    name: springboot-function
   cloud:
     config:
       discovery:
@@ -29,6 +29,8 @@ spring:
         instance-id: ${spring.application.name}
         prefer-ip-address: true
         register: true
+        heartbeat:
+          enabled: true
       enabled: true
       host: ${consul-host:localhost}
       port: ${consul-port:8500}

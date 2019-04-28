@@ -1,0 +1,42 @@
+server:
+  port: 9001
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: springboot-redis
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+  data:
+    mongodb:
+      authentication-database: admin
+      database: tourism
+      host: 192.168.10.9
+      password: lydsj@2019
+      port: 27017
+      username: root
+  redis:
+    database: 1
+    host: 192.168.10.9
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+    password: lydsj@2019
+    port: 63790
+    timeout: 500000000ms
+fdfs:
+  connect-timeout: 2000
+  pool:
+    max-total: 100
+    max-wait-millis: 60
+  so-timeout: 1501
+  thumb-image:
+    height: 150
+    width: 150
+  tracker-list:
+    - 192.168.10.21:22122

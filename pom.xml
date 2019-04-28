@@ -25,6 +25,9 @@
         <module>springboot-lambda</module>
         <module>springboot-redis</module>
         <module>java-thinking</module>
+        <module>gateway-zuul</module>
+        <module>config-server</module>
+        <module>springboot-function</module>
     </modules>
 
     <properties>
