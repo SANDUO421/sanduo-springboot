@@ -99,10 +99,10 @@
         </dependency>
         <!--工具类-->
         <dependency>
-            <groupId>org.sanduo.common</groupId>
+            <groupId>com.sanduo.common</groupId>
             <artifactId>api-common</artifactId>
             <version>1.0.0</version>
-            <scope>compile</scope>
+            <!--<scope>compile</scope>-->
         </dependency>
         <!--lombok-->
         <dependency>
