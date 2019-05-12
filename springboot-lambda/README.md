@@ -1,5 +1,5 @@
 # stream 参考
-IBM的参考：https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/
+1. [IBM的参考](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
 
 ```
 总之，Stream 的特性可以归纳为：
