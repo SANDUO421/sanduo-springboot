@@ -8,6 +8,27 @@
 2. [数据库设计规范](https://choerodon.io/zh/docs/practice-specification-reference/database-design-specification/)
 3. [开发规范](https://choerodon.io/zh/docs/practice-specification-reference/development/)
 
+## 高并发、高可用
+1. [高并发系统之限流特技](https://blog.csdn.net/g_hongjin/article/details/51649246)
+2. [何时进行服务熔断、服务降级、服务限流?](https://blog.csdn.net/llianlianpay/article/details/79768890)
+3. [服务接口API限流 Rate Limit](https://www.cnblogs.com/exceptioneye/p/4783904.html)
+4. [利用Spring Cloud实现微服务- 熔断机制](https://www.cnblogs.com/lvgg/p/7843809.html)
+5. [分布式系统关键技术：流量与数据调度](https://www.jianshu.com/p/2e5bd71589a5)
+
+## 微服务监控
+1. [微服务来了，监控怎么办？](https://blog.csdn.net/guwei9111986/article/details/51798394)
+2. [Spring Boot 2.x监控数据可视化(Actuator + Prometheus + Grafana手把手)](http://www.itmuch.com/spring-boot/actuator-prometheus-grafana/)
+3. [Grafana+Prometheus打造springboot监控平台](https://blog.csdn.net/liufei198613/article/details/82460883)
+4. [SpringBoot 2.x Prometheus Grafana实现应用可视化监控](https://blog.csdn.net/qq_22097749/article/details/80936842)
+5. [Prometheus+ Grafana 微服务系统监控方案搭建](https://blog.csdn.net/zjh_746140129/article/details/80461210)
+6. [四款云服务监控工具介绍：Nagios 、 ganglia、zabbix、onealert](https://www.cnblogs.com/haochuang/p/6560746.html)
+7. [微服务治理框架的技术选型](https://www.docin.com/p-2051113237.html)
+8. [Consul+Prometheus系统监控之服务发现](https://www.jianshu.com/p/242c25332374)
+9. [从零开始搭建ELK+GPE监控预警系统](https://www.cnblogs.com/smallSevens/p/7860461.html)
+10. [Prometheus 通过consul动态修改Targets接入](https://blog.csdn.net/poorcoder_/article/details/79120218)
+## ELK 和GPE
+1. [Prometheus官方文档](https://github.com/prometheus/docs/blob/master/content/docs/operating/integrations.md)
+2. [Consul+Prometheus系统监控之注册发现](https://it.baiked.com/consul/2358.html)
 ## Api 文档
 1. [Spring For All 社区 Spring 官方教程翻译](http://www.spring4all.com/article/558)
 2. [官方文档](https://spring.io/guides)
@@ -30,7 +51,7 @@
 
 ## 文件上传
 1. [springboot附件上传超限](https://blog.csdn.net/qq_25446311/article/details/78600354)
-```
+```java 
 1.项目使用的是Spring Boot + Spring Cloud，上传附件报超出自带tomacat限制大小（默认1M）
 
 "Maximum upload size exceeded; nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: 
