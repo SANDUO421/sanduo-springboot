@@ -48,9 +48,9 @@ spring:
     minEvictableIdleTimeMillis: 300000
     minIdle: 3
     timeBetweenEvictionRunsMillis: 60000
-    url: jdbc:mysql://192.168.10.24:3306/tourism_permit?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: developer@2019
+    url: jdbc:mysql://xxx:3306/tourism_permit?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: xxx
+    password: xxx
     validationQuery: SELECT * FROM SYS_USER # 解决mysql8小时问题
 
 #turbine:
