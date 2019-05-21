@@ -1,0 +1,37 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+server:
+  port: 8201
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  application:
+    name: monitor-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      label: master
+      name: monitor-server
+      profile: test
+      uri: 192.168.10.6:8008/
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: admin-server
+        prefer-ip-address: true
+        register: true
+      enabled: true
+      host: ${consul-host:192.168.10.6}
+      port: ${consul-port:8500}

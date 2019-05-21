@@ -1,0 +1,60 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+server:
+  port: 8201
+  # 禁用默认错误处理页面
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  security:
+    user:
+      name: admin
+      password: admin@lydsj
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  application:
+    name: monitor-server
+  cloud:
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: monitor-server
+        prefer-ip-address: true
+        register: true
+        tags: user.name=${spring.security.user.name},user.password=${spring.security.user.password}
+        health-check-url:
+      enabled: true
+      host: ${consul-host:localhost}
+      port: ${consul-port:8500}
+  druid:
+    borrowConnectionTimeout: 30000
+    maxActive: 20
+    maxWait: 10000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 3
+    timeBetweenEvictionRunsMillis: 60000
+    url: jdbc:mysql://192.168.10.24:3306/tourism_permit?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: developer@2019
+    validationQuery: SELECT * FROM SYS_USER # 解决mysql8小时问题
+
+#turbine:
+#  aggregator:
+#    cluster-config: monitor-test
+#  app-config-list: monitor-test
+#  clusterNameExpression: new String("default")
