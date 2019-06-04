@@ -54,4 +54,5 @@ scrape_configs:
     replacement: /actuator/prometheus # 解决Endpoint的状态为DOWN
     action: replace
 ```
-
+3.[熔断监控Hystrix Dashboard和Turbine](https://blog.csdn.net/ityouknow/article/details/72625646)
+4.

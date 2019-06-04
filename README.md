@@ -3,11 +3,21 @@
 ## 参考
 1. [Springboot和SpringCloud 整合全集](https://github.com/heibaiying/spring-samples-for-all)
 
+## 架构师
+1. [想要做”架构师“，一定要会画设计图](https://blog.csdn.net/mxw2552261/article/details/79447798)
+2. [画出你的项目架构图](https://www.jianshu.com/p/8d50c6ebefdd)
+3. [产品框架图](https://blog.csdn.net/pmcaff2008/article/details/78111282)
+4. [C4-官网](https://c4model.com/)
+5. [为什么说我们需要软件架构图？](https://www.infoq.cn/article/GhprrUlOYyOqS8*FR1pH)
+6. [系统逻辑架构图怎么画](https://jingyan.baidu.com/article/86f4a73ec5a78c37d652692a.html)
+7. []
 ## 开发规范
 1. [敏捷/DevOps实践规范参考](https://choerodon.io/zh/docs/practice-specification-reference/)
 2. [数据库设计规范](https://choerodon.io/zh/docs/practice-specification-reference/database-design-specification/)
 3. [开发规范](https://choerodon.io/zh/docs/practice-specification-reference/development/)
-
+## 管理工具
+1. [敏捷开发管理工具-leangoo](https://www.leangoo.com/leangoo_guide.html)
+2. []
 ## 高并发、高可用
 1. [高并发系统之限流特技](https://blog.csdn.net/g_hongjin/article/details/51649246)
 2. [何时进行服务熔断、服务降级、服务限流?](https://blog.csdn.net/llianlianpay/article/details/79768890)
@@ -26,9 +36,18 @@
 8. [Consul+Prometheus系统监控之服务发现](https://www.jianshu.com/p/242c25332374)
 9. [从零开始搭建ELK+GPE监控预警系统](https://www.cnblogs.com/smallSevens/p/7860461.html)
 10. [Prometheus 通过consul动态修改Targets接入](https://blog.csdn.net/poorcoder_/article/details/79120218)
+11. [微服务监控Spring Boot Admin](https://www.cnblogs.com/cralor/p/9258979.html)
+12. [Hystrix-Dashboard仪表盘](https://www.cnblogs.com/happyflyingpig/p/8372485.html)
+13. [SpringCloud2.0微服务搭建集成Turbine遇到的一些坑以及解决办法](https://blog.csdn.net/weixin_39080216/article/details/80784483)
 ## ELK 和GPE
 1. [Prometheus官方文档](https://github.com/prometheus/docs/blob/master/content/docs/operating/integrations.md)
 2. [Consul+Prometheus系统监控之注册发现](https://it.baiked.com/consul/2358.html)
+3. [从零开始搭建ELK+GPE监控预警系统](https://www.cnblogs.com/smallSevens/p/7860461.html)
+4. [Prometheus的监控解决方案（含监控kubernetes）](https://blog.csdn.net/guoyinzhao/article/details/81283761)
+5. [prometheus的监控解决方案](https://www.cnblogs.com/think-in-java/p/9094635.html)
+6. [Kubernetes平台监控方案之：Exporters+Prometheus+Grafana](https://blog.csdn.net/liukuan73/article/details/78881008)
+7. [grafana官方](https://grafana.com/docs/)
+8. [Grafana使用mysql作为数据源，呈现图表](https://blog.csdn.net/weixin_34114823/article/details/87548379)
 ## Api 文档
 1. [Spring For All 社区 Spring 官方教程翻译](http://www.spring4all.com/article/558)
 2. [官方文档](https://spring.io/guides)
@@ -41,6 +60,8 @@
 6. [领域驱动设计：服务边界划分](https://qinnnyul.github.io/2018/08/13/ddd-concept/#more)
 ## stream 参考
 1. [IBM Stream的参考](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
+## 运维
+1. [CentOS7使用firewall-cmd打开关闭防火墙与端口](https://blog.csdn.net/s_p_j/article/details/80979450)
 
 ## 数据库
 1. [数据库索引分类](https://www.cnblogs.com/zsc1/p/9230096.html)

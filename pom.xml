@@ -29,6 +29,7 @@
         <module>config-server</module>
         <module>springboot-function</module>
         <module>springboot-mq</module>
+        <module>monitor-server</module>
     </modules>
 
     <properties>
