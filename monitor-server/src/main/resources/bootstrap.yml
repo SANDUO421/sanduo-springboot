@@ -6,4 +6,4 @@ spring:
       charset: UTF-8
       enabled: true
   profiles:
-    active: local
+    active: dev

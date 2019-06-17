@@ -1,0 +1,40 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    metrics:
+      enabled: true
+  server:
+    servlet:
+      context-path: /actuator
+server:
+  port: 8201
+spring:
+#  security:
+#    user:
+#      name: admin
+#      password: admin@lydsj
+  application:
+    name: monitor-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      label: master
+      name: monitor-server
+      profile: dev
+      uri: 192.168.1.164:8008/
+    consul:
+      discovery:
+        health-check-interval: 10s
+        health-check-path: ${management.server.servlet.context-path}/health
+        instance-id: monitor-server
+        prefer-ip-address: true
+        register: true
+#        tags: user.name=${spring.security.user.name},user.password=${spring.security.user.password}
+      enabled: true
+      host: ${consul-host:192.168.1.164}
+      port: ${consul-port:8500}
+

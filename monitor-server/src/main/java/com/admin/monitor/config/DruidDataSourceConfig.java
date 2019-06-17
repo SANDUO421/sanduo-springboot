@@ -16,10 +16,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @Auther: 库琦
- * @Description:
- */
+* @Description:    druid的配置类
+* @Author:         sanduo
+* @CreateDate:     2019/6/6 13:29
+* @Version:        1.0
+*/
 @SpringBootConfiguration
 public class DruidDataSourceConfig {
 
@@ -35,27 +36,34 @@ public class DruidDataSourceConfig {
     @Bean
     public Filter statFilter(){
         StatFilter filter = new StatFilter();
-        filter.setSlowSqlMillis(3000); // 设置慢sql时间
+        // 设置慢sql时间
+        filter.setSlowSqlMillis(3000);
         filter.setLogSlowSql(true);
         filter.setMergeSql(true);
         return filter;
     }
 
-    //@Bean // 注册StatViewServlet
-    //public ServletRegistrationBean servletRegistrationBean(){
-    //    return new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
-    //}
+   /* @Bean // 注册StatViewServlet
+    public ServletRegistrationBean servletRegistrationBean(){
+        return new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
+    }*/
+
     @Bean
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
         servletRegistrationBean.setServlet(new StatViewServlet());
         servletRegistrationBean.addUrlMappings("/druid/*");
         Map<String, String> initParameters = new HashMap<>();
-        initParameters.put("resetEnable", "false"); //禁用HTML页面上的“Rest All”功能
-        initParameters.put("allow", "");  //ip白名单（没有配置或者为空，则允许所有访问）
-        initParameters.put("loginUsername", "admin");  //++监控页面登录用户名
-        initParameters.put("loginPassword", "admin@lydsj");  //++监控页面登录用户密码
-        initParameters.put("deny", ""); //ip黑名单
+        //禁用HTML页面上的“Rest All”功能
+        initParameters.put("resetEnable", "false");
+        //ip白名单（没有配置或者为空，则允许所有访问）
+        initParameters.put("allow", "");
+        //++监控页面登录用户名
+        initParameters.put("loginUsername", "admin");
+        //++监控页面登录用户密码
+        initParameters.put("loginPassword", "admin@lydsj");
+        //ip黑名单
+        initParameters.put("deny", "");
         //如果某个ip同时存在，deny优先于allow
         servletRegistrationBean.setInitParameters(initParameters);
         return servletRegistrationBean;

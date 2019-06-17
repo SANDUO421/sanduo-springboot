@@ -37,7 +37,6 @@ spring:
         prefer-ip-address: true
         register: true
         tags: user.name=${spring.security.user.name},user.password=${spring.security.user.password}
-        health-check-url:
       enabled: true
       host: ${consul-host:localhost}
       port: ${consul-port:8500}
@@ -48,13 +47,13 @@ spring:
     minEvictableIdleTimeMillis: 300000
     minIdle: 3
     timeBetweenEvictionRunsMillis: 60000
-    url: jdbc:mysql://xxx:3306/tourism_permit?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: xxx
-    password: xxx
+    url: jdbc:mysql://192.168.10.24:3306/tourism_permit?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: developer@2019
     validationQuery: SELECT * FROM SYS_USER # 解决mysql8小时问题
 
-#turbine:
-#  aggregator:
-#    cluster-config: monitor-test
-#  app-config-list: monitor-test
-#  clusterNameExpression: new String("default")
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: monitor-test
+  clusterNameExpression: new String("default")
