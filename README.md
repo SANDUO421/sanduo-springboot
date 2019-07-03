@@ -112,3 +112,6 @@ PS：若是有网关之类的中转，需在网关中也加入如上配置。
 
 ## java 专题
 1. [Java 信任所有SSL证书(解决PKIX path building failed问题)](https://blog.csdn.net/zziamalei/article/details/46520797)
+
+## 工具
+1. [Alibaba Cloud Toolkit使用：在 Intellij IDEA 中部署 Spring Boot / Spring Cloud 应用到远程服务器](https://blog.csdn.net/w1014074794/article/details/87364996)
