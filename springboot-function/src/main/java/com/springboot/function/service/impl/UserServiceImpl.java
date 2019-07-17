@@ -2,9 +2,13 @@ package com.springboot.function.service.impl;
 
 import com.springboot.function.annotation.DataFilter;
 import com.springboot.function.entity.User;
+import com.springboot.function.exception.WechatLoginException;
 import com.springboot.function.service.UserService;
+import com.springboot.function.utils.HttpStatusEnum;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.support.WebExchangeBindException;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -13,6 +17,7 @@ import java.util.Map;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
 
     @Override
     @DataFilter
@@ -24,4 +29,15 @@ public class UserServiceImpl implements UserService {
         user.setPassword(password != null ? String.valueOf(password):null);
         return user;
     }
+
+    @Override
+    @DataFilter
+    public User queryUserInfoThrowException(Map<String, Object> params) {
+        Object username = params.getOrDefault("username", "");
+        if (username != null) {
+            throw new WechatLoginException(HttpStatusEnum.StudentISBinded);
+        }
+        return null;
+    }
+
 }

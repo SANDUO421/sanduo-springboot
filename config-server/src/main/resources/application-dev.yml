@@ -37,7 +37,7 @@ spring:
       host: ${consul-host:localhost}
       port: ${consul-port:8500}
   rabbitmq:
-    host: 192.168.10.9
+    host: 192.168.1.166
     password: tourism@permit
     port: 5672
     username: tourism-permit

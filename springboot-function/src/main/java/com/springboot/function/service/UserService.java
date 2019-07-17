@@ -2,6 +2,7 @@ package com.springboot.function.service;
 
 import com.springboot.function.entity.User;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -15,4 +16,11 @@ public interface UserService {
      * @return
      */
     User queryUserInfo(Map<String, Object> params);
+
+    /**
+     * 抛出自定义异常
+     * @param params
+     * @return
+     */
+    User queryUserInfoThrowException(Map<String, Object> params);
 }
