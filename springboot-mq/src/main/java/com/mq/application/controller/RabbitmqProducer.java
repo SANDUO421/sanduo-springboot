@@ -1,5 +1,6 @@
 package com.mq.application.controller;
 
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
@@ -15,6 +16,7 @@ import java.util.Map;
  * @author 三多
  * @Time 2019/5/9
  */
+
 @Component
 @Slf4j
 public class RabbitmqProducer {

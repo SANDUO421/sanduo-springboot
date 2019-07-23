@@ -1,7 +1,12 @@
 package com.mq.application.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.beans.Encoder;
@@ -13,7 +18,10 @@ import java.util.Map;
  * @author 三多
  * @Time 2019/5/9
  */
+
+@Api(description = "发送消息")
 @RestController
+@RequestMapping("/send")
 public class ProducerController {
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -21,6 +29,8 @@ public class ProducerController {
     /**
      * 给hello队列发送消息
      */
+    @ApiOperation(value = "发送消息send")
+    @PutMapping("/send")
     public void send() {
         for (int i =0; i< 100; i++) {
             String msg = "hello, 序号: " + i;
@@ -29,8 +39,10 @@ public class ProducerController {
         }
     }
     /**
-     * 给hello队列发送消息:sendId
+     * 给hello队列发送消息:map
      */
+    @ApiOperation(value = "发送消息send Map")
+    @PutMapping("/sendMap")
     public void sendId() {
         for (int i =0; i< 100; i++) {
             Map map  = new HashMap<String,Integer>();

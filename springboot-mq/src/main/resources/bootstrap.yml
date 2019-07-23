@@ -1,6 +1,6 @@
 spring:
   application:
-    name: pringboot-mq
+    name: springboot-mq
   http:
     encoding:
       charset: UTF-8

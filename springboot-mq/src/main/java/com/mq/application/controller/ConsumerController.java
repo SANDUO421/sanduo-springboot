@@ -24,13 +24,12 @@ import java.util.Map;
 @Slf4j
 @RestController
 public class ConsumerController {
-   // private Logger log = LoggerFactory.getLogger(Comsumer.class);
 
     @RabbitListener(queues = "queue-test")
     public void process(Message message, Channel channel) throws IOException {
         // 采用手动应答模式, 手动确认应答更为安全稳定
         channel.basicAck(message.getMessageProperties().getDeliveryTag(), true);
-        //log.info("receive: " + new String(message.getBody()));
+        log.info("receive: " + new String(message.getBody(),Charset.defaultCharset()));
         byte[] body = message.getBody();
         ByteArrayInputStream byteInt=new ByteArrayInputStream(body);
         ObjectInputStream objInt=new ObjectInputStream(byteInt);
