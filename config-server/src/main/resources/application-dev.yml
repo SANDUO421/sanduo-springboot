@@ -21,7 +21,7 @@ spring:
       server:
         git:
           clone-on-start: true
-          password: yingzi308
+          password: xxxx
           search-paths: dev
           skipSslValidation: true
           uri: https://github.com/SANDUO421/springcloud-config-repo.git
