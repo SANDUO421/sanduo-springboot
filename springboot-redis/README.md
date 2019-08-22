@@ -12,3 +12,8 @@
 2. [springboot~Mongodb的集成与使用](https://www.cnblogs.com/lori/p/8875701.html)
 3. [spring cloud集成MongoDB](https://blog.csdn.net/zhangchangbin123/article/details/80491290)
 4. [详细图解mongodb下载、安装、配置与使用](https://www.cnblogs.com/minily/p/9431609.html)
+
+## 需求
+### 1.生成验证码需求
+1、生成验证码存储到redis中。
+2、从redis中读取验证码，确认验证码的正确性
