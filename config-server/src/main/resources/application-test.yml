@@ -20,7 +20,7 @@ spring:
     config:
       server:
         git:
-          password: yingzi308
+          password: xxx
           skipSslValidation: true
           uri: https://github.com/SANDUO421/springcloud-config-repo.git
           username: sanduo421
