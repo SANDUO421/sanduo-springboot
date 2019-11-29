@@ -17,7 +17,7 @@ public class Lambda {
         /**
          * 小写转大写：单参数语法
          */
-        List<String> proNames = Arrays.asList(new String[]{"Ni", "Hao", "Lambda"});
+        List<String> proNames = Arrays.asList("Ni", "Hao", "Lambda");
         List<String> collect = proNames.parallelStream().map(name -> {
             return name.toLowerCase();
         }).collect(Collectors.toList());
@@ -61,7 +61,7 @@ public class Lambda {
 
     public void whatThis() {
         //转全小写
-        List<String> proStrs = Arrays.asList(new String[]{"Ni","Hao","Lambda"});
+        List<String> proStrs = Arrays.asList("Ni","Hao","Lambda");
         List<String> collect = proStrs.parallelStream().map(str -> {
             System.out.println(this.getClass().getSimpleName());
             return str.toLowerCase();

@@ -30,6 +30,7 @@
         <module>springboot-function</module>
         <module>springboot-mq</module>
         <module>monitor-server</module>
+        <module>auth-jwt</module>
     </modules>
 
     <properties>

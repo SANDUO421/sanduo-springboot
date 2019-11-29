@@ -1,6 +1,5 @@
 package com.spring.netty.heartbeat;
 
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -17,7 +16,7 @@ public class HeartbeatServerInitializer extends ChannelInitializer<SocketChannel
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
-        //空闲检测
+        //空闲检测，心跳检测
         pipeline.addLast("idleStateHandler",new IdleStateHandler(5,7,10, TimeUnit.SECONDS));
         pipeline.addLast("heartbeatHandler",new  HeartbeatHandler());
     }

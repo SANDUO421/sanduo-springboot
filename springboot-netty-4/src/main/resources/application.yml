@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+    application:
+        name: springboot-netty-4
+    http:
+      encoding:
+        enabled: true
+        charset: UTF-8
+

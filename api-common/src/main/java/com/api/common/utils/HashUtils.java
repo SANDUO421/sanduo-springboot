@@ -7,6 +7,7 @@ import com.google.common.hash.Hashing;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class HashUtils {
   
@@ -24,12 +25,8 @@ public class HashUtils {
 
   public static String hashString(String input){
     HashCode code = null;
-    try {
-      code = MURMUR_FUNC.hashBytes(input.getBytes("utf-8"));
-    } catch (UnsupportedEncodingException e) {
-      Throwables.propagate(e);
-    }
-    return code.toString();
+      code = MURMUR_FUNC.hashBytes(input.getBytes(StandardCharsets.UTF_8));
+      return code.toString();
   }
   
   //public static void main(String[] args) {

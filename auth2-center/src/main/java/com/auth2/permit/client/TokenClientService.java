@@ -10,5 +10,5 @@ import java.util.List;
 @FeignClient(value = "permit-control")
 public interface TokenClientService {
     @GetMapping("/oauthClient/getAllClient")
-    public ApiResponse<List<OauthClientDetails>>  getAllClient();
+    ApiResponse<List<OauthClientDetails>>  getAllClient();
 }

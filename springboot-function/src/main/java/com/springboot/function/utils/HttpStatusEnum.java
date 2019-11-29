@@ -16,7 +16,7 @@ public enum HttpStatusEnum {
     private String description;
     private int code;
 
-    private HttpStatusEnum (String description, int code) {
+    HttpStatusEnum(String description, int code) {
         this.description = description;
         this.code = code;
     }

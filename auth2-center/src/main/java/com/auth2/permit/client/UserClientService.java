@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "permit-control")
 public interface UserClientService {
     @GetMapping(value = "user/getOne")
-    public ApiResponse<UserEntity>  getUser(@RequestParam("username")String username);
+    ApiResponse<UserEntity>  getUser(@RequestParam("username") String username);
 }

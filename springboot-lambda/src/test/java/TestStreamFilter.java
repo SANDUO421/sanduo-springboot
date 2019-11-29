@@ -64,9 +64,9 @@ public class TestStreamFilter {
         /**
          * 基本三种数据流的操作
          */
-        IntStream.of(new int[]{6, 3, 2, 4}).forEachOrdered(System.out::print);
+        IntStream.of(6, 3, 2, 4).forEachOrdered(System.out::print);
         System.out.println();
-        IntStream.of(new int[]{6, 3, 2, 4}).sorted().forEach(System.out::print);
+        IntStream.of(6, 3, 2, 4).sorted().forEach(System.out::print);
         System.out.println();
         //开区间
         IntStream.range(1, 6).forEachOrdered(System.out::print);
@@ -88,7 +88,7 @@ public class TestStreamFilter {
         //Set set1 = stream2.collect(Collectors.toSet());
         //Stack stack1 = stream2.collect(Collectors.toCollection(Stack::new));
         // 3. String
-        String str = stream2.collect(Collectors.joining()).toString();
+        String str = stream2.collect(Collectors.joining());
         System.out.println(str);
 
 
