@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
     <description>定时任务</description>
     <properties>
-        <quartz-version>2.3.0</quartz-version>
+        <quartz-version>2.3.2</quartz-version>
     </properties>
 
     <dependencies>
